@@ -1,6 +1,9 @@
 # Import Parts DZ 🛠️
 
 **Import Parts DZ** is a React-based e-commerce web application for selling and showcasing car spare parts across Algeria. Users can view product details, add items to their cart, and submit reviews. The platform includes a modern homepage with branding, contact information, and social media links.
+created by : RIHAM MOHAMED KEBIR 
+             AIDA  MOUFOUKI
+             NAWAL MESSOUAF
 
 ---
 
