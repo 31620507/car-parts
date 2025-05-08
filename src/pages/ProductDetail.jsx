@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import products from '../data/data';
 import { CartContext } from '../context/CartContext';
@@ -10,7 +10,14 @@ const ProductDetail = () => {
   const product = products.find((p) => p.id === parseInt(id));
   const [reviews, setReviews] = useState(product?.reviews || []);
   const [newReview, setNewReview] = useState({ name: '', comment: '' });
-  const [mainImage, setMainImage] = useState(product?.image); // 👈 main image state
+  const [mainImage, setMainImage] = useState(product?.image);
+
+  const [views, setViews] = useState(0);
+
+  useEffect(() => {
+    // Increment views when product ID changes (i.e., the page is loaded)
+    setViews((prev) => prev + 1);
+  }, [id]);
 
   const handleReviewSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +35,7 @@ const ProductDetail = () => {
   return (
     <div style={{ padding: '20px' }}>
       <h2>{product.name}</h2>
+      <p>👁️ Vues : {views}</p>
       <img src={mainImage} alt={product.name} style={{ width: '300px' }} />
       <p><strong>Prix :</strong> {product.price} DA</p>
       <p><strong>Catégorie :</strong> {product.category}</p>
