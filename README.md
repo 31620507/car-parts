@@ -24,4 +24,4 @@ Follow these steps to run the project locally:
 
 1. **Clone the repository**
    ```bash
-   git clone <(https://github.com/31620507/car-parts)>
+   git clone <(https://github.com/31620507/car-parts)>;
